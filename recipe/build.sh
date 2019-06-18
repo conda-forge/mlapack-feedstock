@@ -4,8 +4,6 @@
 # relies on these extensions
 export CXXFLAGS=${CXXFLAGS/-std=c++17/-std=gnu++17}
 
-autoreconf -i \
-&& \
 ./configure --prefix=$PREFIX \
             --enable-gmp \
             --enable-mpfr \
