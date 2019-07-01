@@ -1,25 +1,21 @@
 {% set version = "0.8.1" %}
-{% set revision = "950436a5acffda1bcd8125ffcde93457592a0b3e" %}
-{% set sha256sum = "cf461dfc374e02ad33dda9673b498178360f5c5bd15e2b8ebe26f113e04db376" %}
+{% set sha256sum = "a0810b16b85f442f90933f04a5e4a4e8fb3ec234d755e1ed5ef72dcf04d4709a" %}
 
 package:
   name: mlapack 
   version: {{ version }}
 
 source:
-  url: https://github.com/RaumZeit/mlapack/archive/{{ revision }}.tar.gz
+  url: https://github.com/RaumZeit/mlapack/releases/download/v{{ version }}/mlapack-{{ version }}.tar.gz
   sha256: {{ sha256sum }}
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win or osx]
 
 requirements:
   build:
     - {{ compiler('cxx') }}
-    - autoconf
-    - libtool
-    - automake
   host:
     - gmp
     - mpfr
